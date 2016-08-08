@@ -3,8 +3,7 @@ var map1;
 var map2;
 var divid;
 var mapx;
-var base_url="https://sheltered-castle-98865.herokuapp.com/";
-//var base_url="http://localhost:3000/";
+
 function init(mapx, divid, latx, lngx) {
     if (mapx == "map1") {
         var myOptions = {
@@ -14,12 +13,11 @@ function init(mapx, divid, latx, lngx) {
         };
         map1 = new google.maps.Map(document.getElementById(divid), myOptions);
         google.maps.event.addListener(map1, 'click', function(event) {
-            //alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+         
             $("#latt").val(parseFloat(event.latLng.lat())).trigger('change');
 
             $("#lngt").val(parseFloat(event.latLng.lng())).trigger('change');
-           // var input = $("#tit").val("jquerry");
-           // input.trigger('change');
+          
         });
     } else {
         var myOptions = {
@@ -29,12 +27,11 @@ function init(mapx, divid, latx, lngx) {
         };
         map2 = new google.maps.Map(document.getElementById(divid), myOptions);
         google.maps.event.addListener(map2, 'click', function(event) {
-            //alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+       
             $("#latt").val(parseFloat(event.latLng.lat())).trigger('change');
 
             $("#lngt").val(parseFloat(event.latLng.lng())).trigger('change');
-           // var input = $("#tit").val("jquerry");
-            //input.trigger('change');
+           
         });
 
     }
@@ -178,16 +175,9 @@ var event_vue = new Vue({
                 success: function(data) {
 
                     var self = this;
-
-                    //// This way
+                 
                     self.Marks = data;
-                    // console.log(self.Marks);
-
-                    // Or this way
-                    // vueRock.$set('totalItems', data);
-                    // Or this way
-                    // vueRock.$set('totalItems', data);
-
+                   
                 }
             });
 
@@ -216,7 +206,6 @@ var event_vue = new Vue({
 
         deleteEvent: function(index) {
             if (confirm("Are you sure you want to delete this event?")) {
-                // $remove is a Vue convenience method similar to splice
                 this.events.$remove(index);
             }
         }

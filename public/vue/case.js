@@ -1,4 +1,4 @@
-var base_url = "http://localhost:3000/";
+
 var img;
 
 var Case = new Vue({
@@ -30,8 +30,8 @@ var Case = new Vue({
             //console.log(reader.result);
 
             myReader.onload = function(event){
-            	var temp=myReader.result;
-            	img= temp.replace(/^data:image\/png;base64,/,'');
+            	img=myReader.result;
+          
     		console.log(myReader.result);
 			};                     
         },
@@ -58,30 +58,7 @@ var Case = new Vue({
         },
 
         fetchCases: function() {
-        	/*
-        	 $.ajax({
-                url: base_url+'api/caseslibry/?page=1&limit=10',
-                type: 'get',
-                dataType: 'json',
-                async: true,
-                success: function(data) {
-                    // var self = this;
-                //this.$set('cases', data);
-                console.log(data.docs); 
-                var self = this;
-                self.cases = data.docs;     
-                    //// This way
-                    //self.Marks= data;
-                    // console.log(self.Marks);
-
-                    // Or this way
-                    // vueRock.$set('totalItems', data);
-
-                }
-            });
-
-            
-        },*/this.$http.get(base_url+'api/caseslibry/?page=1&limit=20').then((response) => {
+        	this.$http.get(base_url+'api/caseslibry/?page=1&limit=40').then((response) => {
                 this.$set('cases',   response.json().docs)
                     console.log(response.json().docs);
                 return response.json();

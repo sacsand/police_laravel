@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('Home', 'HomeController@getHome');
 
 Route::get('map', 'HomeController@getMap');
@@ -28,6 +28,8 @@ Route::get('case', function()
 {
     return View::make('pages.case');
 });
+
+
 
 
 /*Route::controllers([

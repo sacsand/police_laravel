@@ -67,7 +67,7 @@
                         <p class="list-group-item-text" v-if="event.type">Type : @{{ event.type}}</p>
                         <p class="list-group-item-text" v-if="event.published_at">@{{ event.published_at}}</p>
                         <div id=imgcon>
-                        <img src="@{{event.image}}"> 
+                        <img src="data:image/png;base64, @{{event.image}}"> 
                         </div>
                         <button class="btn btn-xs btn-danger" v-on:click="deleteEvent($index)">Delete</button>
                     </a>
