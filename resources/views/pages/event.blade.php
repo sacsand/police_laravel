@@ -61,7 +61,7 @@
                         <p class="list-group-item-text" v-if="event.type">@{{ event.type}}</p>
                         <p class="list-group-item-text" v-if="event.lat">@{{ event.lat}}</p>
                         <p class="list-group-item-text" v-if="event.lng">@{{ event.lng}}</p>
-                        <button class="btn btn-xs btn-danger" v-on:click="deleteEvent($index)">Delete</button>
+                 
                     </a>
                 </div>
             </div>

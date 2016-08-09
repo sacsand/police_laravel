@@ -69,7 +69,7 @@
                         <div id=imgcon>
                         <img src="@{{event.image}}"> 
                         </div>
-                        <button class="btn btn-xs btn-danger" v-on:click="deleteEvent($index)">Delete</button>
+                       
                     </a>
                 </div>
             </div>
